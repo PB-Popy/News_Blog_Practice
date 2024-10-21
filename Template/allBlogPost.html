@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+
+
+{% block body %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Feed with Read More</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .feed-item {
+            background: #fff;
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+        }
+        
+        .feed-item h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+        }
+        
+        .feed-item p {
+            margin: 0;
+        }
+        
+        .read-more {
+            display: inline-block;
+            margin-top: 10px;
+            color: #007bff;
+            text-decoration: none;
+        }
+
+        .read-more:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Simple Feed</h1>
+    </header>
+    
+    {% for i in news %}
+        
+    <div class="feed-item">
+        <h2>{{i.title}}</h2>
+        <p>{{i.content}}</p>
+        <p>{{i.author}}</p>
+        <p>{{i.author}}</p>
+        <a href="#" class="read-more">Read More</a>
+    </div>
+
+    {% endfor %}
+    
+    {% for i in blog %}
+    <div class="feed-item">
+        <h2>Post Title 2</h2>
+        <p>This is a simple description for post 2. Click below for more details.</p>
+        <a href="#" class="read-more">Read More</a>
+    </div>
+    {% endfor %}
+    
+    
+</body>
+</html>
+
+
+    
+{% endblock body %}
+    
